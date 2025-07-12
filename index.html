@@ -1,20 +1,54 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0;url=https://wa.me/5562992053928?text=Aproveite%20a%20promoção%20e%20obtenha%20a%20licença.">
-  <script>
-    const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
-    const msg = encodeURIComponent('Aproveite a promoção e obtenha a licença.');
-    const phone = '5562992053928';
+  <title>Conectando ao WhatsApp...</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      text-align: center;
+      padding-top: 100px;
+    }
 
-    const link = isMobile
-      ? `whatsapp://send?phone=${phone}&text=${msg}`
-      : `https://web.whatsapp.com/send?phone=${phone}&text=${msg}`;
+    #mensagem {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 30px;
+    }
 
-    window.location.href = link;
-  </script>
+    #btnManual {
+      display: none;
+      background-color: #25d366;
+      color: white;
+      padding: 15px 25px;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 18px;
+    }
+  </style>
 </head>
-<body></body>
+<body>
+  <div id="mensagem">Conectando você ao nosso atendimento via WhatsApp...</div>
+
+  <a id="btnManual" href="https://wa.me/5562992053928?text=Olá%2C+quero+mais+informações" target="_blank" rel="noopener noreferrer">
+    Clique aqui se não for redirecionado
+  </a>
+
+  <script>
+    window.onload = function () {
+      const link = "https://wa.me/5562992053928?text=Olá%2C+quero+mais+informações";
+
+      // Redirecionamento automático (funciona na maioria dos casos)
+      setTimeout(() => {
+        window.location.href = link;
+      }, 1500);
+
+      // Mostra o botão manual se o redirecionamento falhar
+      setTimeout(() => {
+        document.getElementById('btnManual').style.display = 'inline-block';
+      }, 4000);
+    };
+  </script>
+</body>
 </html>
