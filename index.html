@@ -2,63 +2,55 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Verificando disponibilidade...</title>
+  <title>Fale Conosco</title>
   <meta name="robots" content="noindex">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     body {
-      font-family: sans-serif;
-      background-color: #fff;
-      color: #333;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      margin: 0;
+      padding: 0;
       text-align: center;
-      padding-top: 100px;
     }
-
-    .msg {
+    .container {
+      max-width: 600px;
+      margin: 80px auto;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+      font-size: 28px;
+    }
+    p {
       font-size: 18px;
-      margin-bottom: 20px;
+      color: #555;
     }
-
-    .loader {
-      width: 50px;
-      height: 50px;
-      border: 6px solid #ddd;
-      border-top: 6px solid #25d366;
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-      margin: 20px auto;
+    a.button {
+      display: inline-block;
+      margin-top: 30px;
+      background-color: #25D366;
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
     }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    a.button:hover {
+      background-color: #1ebd5b;
     }
   </style>
 </head>
 <body>
-  <div class="msg">Carregando ambiente seguro...</div>
-  <div class="loader"></div>
-
-  <script>
-    // Link criptografado em Base64
-    const encoded = "aHR0cHM6Ly93YS5tZS81NTYyOTkyMDUzOTI4P3RleHQ9T2zDoSUyQytxdWVybyttYWlzK2luZm9ybWHDp8O1ZXM=";
-
-    function decodeAndOpen() {
-      const url = atob(encoded);
-      window.open(url, "_blank");
-    }
-
-    // Aciona somente após interação real do usuário
-    function armRedirect() {
-      window.removeEventListener('mousemove', armRedirect);
-      window.removeEventListener('click', armRedirect);
-      window.removeEventListener('touchstart', armRedirect);
-      setTimeout(decodeAndOpen, 1500); // atraso de segurança
-    }
-
-    // Escuta qualquer ação humana
-    window.addEventListener('mousemove', armRedirect);
-    window.addEventListener('click', armRedirect);
-    window.addEventListener('touchstart', armRedirect);
-  </script>
+  <div class="container">
+    <h1>Atendimento via WhatsApp</h1>
+    <p>Toque no botão abaixo para iniciar uma conversa com nossa equipe pelo WhatsApp.</p>
+    <a class="button"
+       href="https://wa.me/5562992053928?text=Olá%2C+quero+mais+informações"
+       target="_blank">
+       Abrir WhatsApp Agora
+    </a>
+  </div>
 </body>
 </html>
