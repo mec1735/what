@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Manual Prático da Mãe Solo – do recém‑nascido aos 2 anos</title>
+  <meta name="description" content="Conteúdo prático, acolhedor e direto ao ponto para mães solo: amamentação, sono, introdução alimentar, desenvolvimento, birras, desfralde, segurança e primeiros socorros. Entre no grupo de WhatsApp e garanta seu exemplar." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <style>
+    :root{
+      --rosa: #ff5c8a;        /* primária chamativa (feminina) */
+      --vinho: #9b1b4a;       /* variação para destaques */
+      --bege: #fff6f2;        /* fundo suave */
+      --grafite:#222;         /* texto principal */
+      --cinza:#6b7280;        /* texto secundário */
+      --sombra: 0 10px 30px rgba(0,0,0,.15);
+      --raio: 18px;
+      --max: 1180px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0; padding:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; color:var(--grafite); background:var(--bege); scroll-behavior:smooth}
+    a{color:inherit; text-decoration:none}
+    .container{max-width:var(--max); margin:0 auto; padding:0 20px}
+    /* HERO */
+    .hero{position:relative; min-height:92vh; display:grid; place-items:center; text-align:center; isolation:isolate}
+    .hero::before{content:""; position:absolute; inset:0; background:url('fundo 1.jpg') center/cover no-repeat; filter:brightness(.6); z-index:-2}
+    .hero::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,.10), rgba(0,0,0,.35)); z-index:-1}
+    .hero .wrap{color:#fff; padding:80px 20px}
+    .badge{display:inline-block; background:rgba(255,255,255,.2); border:1px solid rgba(255,255,255,.5); padding:8px 14px; border-radius:999px; backdrop-filter: blur(4px); font-weight:600; letter-spacing:.3px}
+    h1{font-size: clamp(28px, 4.4vw, 52px); line-height:1.05; margin:18px 0 14px; font-weight:800}
+    .sub{font-size: clamp(16px, 2.2vw, 22px); color:#f1f5f9; max-width:900px; margin:0 auto 26px}
+    .cta{display:flex; gap:14px; flex-wrap:wrap; justify-content:center}
+    .btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:14px 20px; border-radius:var(--raio); font-weight:700; letter-spacing:.3px; box-shadow:var(--sombra); transition:.2s ease; border:2px solid transparent}
+    .btn.primary{background:var(--rosa); color:#fff}
+    .btn.primary:hover{transform: translateY(-2px); background:#ff3f79}
+    .btn.secondary{background:#fff; color:var(--grafite); border-color:#fff}
+    .btn.secondary:hover{transform: translateY(-2px)}
+
+    /* NAVEGAÇÃO FLOTANTE */
+    .nav{position:sticky; top:0; z-index:50; background:rgba(255,255,255,.9); border-bottom:1px solid #eee; backdrop-filter: blur(10px)}
+    .nav .inner{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:10px 0}
+    .brand{display:flex; align-items:center; gap:10px; font-weight:800}
+    .brand img{height:48px; width:auto; border-radius:10px; box-shadow:var(--sombra)}
+    .menu{display:flex; gap:16px; flex-wrap:wrap}
+    .menu a{font-weight:700; color:var(--vinho)}
+
+    /* SEÇÕES */
+    section{padding:70px 0}
+    .grid{display:grid; gap:28px}
+    .grid-2{grid-template-columns: repeat(2, minmax(0,1fr))}
+    @media (max-width: 900px){.grid-2{grid-template-columns:1fr}}
+
+    .card{background:#fff; border-radius:var(--raio); box-shadow:var(--sombra); padding:24px}
+    .h{font-size: clamp(22px, 3vw, 34px); margin:0 0 10px; font-weight:800}
+    .p{color:var(--cinza); font-size:18px}
+
+    /* PROVA SOCIAL */
+    .masonry{columns: 1; column-gap:18px}
+    @media(min-width: 780px){.masonry{columns:2}}
+    @media(min-width: 1100px){.masonry{columns:3}}
+    .depo{break-inside: avoid; margin-bottom:18px; background:#fff; border-radius:var(--raio); box-shadow:var(--sombra); overflow:hidden}
+    .depo video, .depo img{width:100%; height:auto; display:block}
+    .depo .cap{padding:12px 14px; font-weight:600}
+
+    /* VALOR */
+    .price{display:grid; grid-template-columns: 1fr 1fr; gap:28px; align-items:center}
+    @media(max-width:900px){.price{grid-template-columns:1fr}}
+    .price .valor{background:#fff; border-radius:var(--raio); box-shadow:var(--sombra); padding:28px}
+    .valor .num{font-size: clamp(34px, 5vw, 52px); color:var(--vinho); font-weight:800}
+    .bullet{display:grid; gap:10px; margin:14px 0}
+    .bullet li{display:flex; gap:10px; align-items:flex-start}
+    .bullet li::before{content:"✓"; color:var(--rosa); font-weight:800}
+
+    /* RODAPÉ */
+    footer{background:#111; color:#eee}
+    .foot{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:16px; padding:18px 0}
+    .foot a{color:#fff; font-weight:700}
+    .seal{display:flex; gap:10px; align-items:center; font-size:14px}
+    .shield{width:26px; height:26px; border-radius:6px; background:linear-gradient(135deg,#00d084,#2dd4bf); display:inline-block}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container inner">
+      <div class="brand">
+        <img src="capa do livro.png" alt="Capa do livro Manual da Mãe Solo" loading="lazy"/>
+        <span>Manual da Mãe Solo</span>
+      </div>
+      <nav class="menu">
+        <a href="#prova-social">PROVA SOCIAL</a>
+        <a href="#valor">VALOR</a>
+        <a href="#grupo">GRUPO WHATSAPP</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="inicio" aria-label="Início">
+    <div class="wrap container">
+      <span class="badge">Conteúdo direto ao ponto • Última geração • Seguro em HTTPS</span>
+      <h1>Um guia prático e acolhedor<br/>para quem cria sozinho(a)</h1>
+      <p class="sub">Um livro feito para mães solteiras que precisam de orientação clara para os primeiros anos do bebê: amamentação, sono, alimentação, desenvolvimento e segurança — sem julgamentos, com passos simples e resultados reais.</p>
+      <div class="cta">
+        <a class="btn primary" href="https://wa.me/5562999999999?text=Quero%20comprar%20o%20livro" target="_blank" rel="noopener" aria-label="Comprar o livro pelo WhatsApp">Quero comprar</a>
+        <a class="btn secondary" href="#prova-social">Ver prova social</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre">
+    <div class="container grid grid-2">
+      <div class="card">
+        <h2 class="h">Sobre o livro</h2>
+        <p class="p">Escrito para a rotina real, o <strong>Manual da Mãe Solo</strong> organiza respostas rápidas para as dúvidas mais urgentes dos 0 aos 2 anos. Em vez de teorias, você encontra <em>passo a passo</em> para aliviar dores da amamentação, criar rotinas de sono, introduzir alimentos com segurança, lidar com birras, desfralde e primeiros socorros. Tudo em linguagem simples, com checklists e planos de ação.</p>
+        <ul class="bullet">
+          <li>Amamentação sem sofrimento: ajustes de pega, posições e como aumentar a produção.</li>
+          <li>Sono: ambiente seguro, rotinas e soluções reais para regressões.</li>
+          <li>Introdução alimentar descomplicada e cardápios de exemplo.</li>
+          <li>Desenvolvimento e comportamento: ansiedade de separação, dentição e estímulos.</li>
+          <li>Desfralde com respeito ao ritmo da criança.</li>
+          <li>Segurança em casa e primeiros socorros (engasgo, febre, quedas).</li>
+        </ul>
+        <p class="p">É um companheiro de bolso para os momentos em que você precisa agir agora — com acolhimento e zero enrolação.</p>
+      </div>
+      <div class="card">
+        <img src="capa do livro.png" alt="Capa do livro: Manual da Mãe Solo" style="width:100%; border-radius:var(--raio)" loading="lazy"/>
+      </div>
+    </div>
+  </section>
+
+  <section id="prova-social">
+    <div class="container">
+      <h2 class="h" style="text-align:center">Prova Social</h2>
+      <p class="p" style="text-align:center; max-width:860px; margin: 0 auto 24px">Assista a experiências reais de quem aplicou o passo a passo do livro e viu a rotina destravar. Substitua os arquivos na raiz do seu GitHub como <strong>“video prova social 1.mp4”</strong> até <strong>“video prova social 10.mp4”</strong>. Também é possível usar imagens “depoimento 1.jpg/png”…</p>
+      <div class="masonry" id="galeria">
+        <!-- Até 10 blocos de vídeo/imagem. Deixe os arquivos na raiz com os nomes abaixo -->
+        <figure class="depo"><video controls preload="none" poster="depoimento 1.jpg"><source src="video prova social 1.mp4" type="video/mp4"></video><figcaption class="cap">“Dormimos melhor já na 1ª semana!”</figcaption></figure>
+        <figure class="depo"><video controls preload="none" poster="depoimento 2.jpg"><source src="video prova social 2.mp4" type="video/mp4"></video><figcaption class="cap">“Pegada correta mudou tudo na amamentação.”</figcaption></figure>
+        <figure class="depo"><video controls preload="none" poster="depoimento 3.jpg"><source src="video prova social 3.mp4" type="video/mp4"></video><figcaption class="cap">“Introdução alimentar sem medo.”</figcaption></figure>
+        <figure class="depo"><video controls preload="none" poster="depoimento 4.jpg"><source src="video prova social 4.mp4" type="video/mp4"></video><figcaption class="cap">“Mais segurança e menos culpa.”</figcaption></figure>
+        <figure class="depo"><video controls preload="none" poster="depoimento 5.jpg"><source src="video prova social 5.mp4" type="video/mp4"></video><figcaption class="cap">“Birras deixaram de ser terror.”</figcaption></figure>
+        <figure class="depo"><video controls preload="none" poster="depoimento 6.jpg"><source src="video prova social 6.mp4" type="video/mp4"></video><figcaption class="cap">“Primeiros socorros que salvam.”</figcaption></figure>
+        <figure class="depo"><video controls preload="none" poster="depoimento 7.jpg"><source src="video prova social 7.mp4" type="video/mp4"></video><figcaption class="cap">“Grupo de apoio que acolhe.”</figcaption></figure>
+        <figure class="depo"><video controls preload="none" poster="depoimento 8.jpg"><source src="video prova social 8.mp4" type="video/mp4"></video><figcaption class="cap">“Rotina de sono que funciona.”</figcaption></figure>
+        <figure class="depo"><video controls preload="none" poster="depoimento 9.jpg"><source src="video prova social 9.mp4" type="video/mp4"></video><figcaption class="cap">“Refeições fáceis, bebê feliz.”</figcaption></figure>
+        <figure class="depo"><video controls preload="none" poster="depoimento 10.jpg"><source src="video prova social 10.mp4" type="video/mp4"></video><figcaption class="cap">“Mudou nossa rotina por completo.”</figcaption></figure>
+      </div>
+
+      <div id="grupo" class="cta" style="margin-top:18px">
+        <a class="btn primary" href="https://wa.me/5562999999999?text=Quero%20entrar%20no%20Grupo%20Mam%C3%A3es" target="_blank" rel="noopener" aria-label="Entrar no grupo de WhatsApp">ENTRAR GRUPO MAMÃES</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="valor">
+    <div class="container price">
+      <div>
+        <img src="capa do livro.png" alt="Capa do livro Manual da Mãe Solo" style="width:100%; border-radius:var(--raio); box-shadow:var(--sombra)" loading="lazy"/>
+      </div>
+      <div class="valor">
+        <h2 class="h">Tudo que você precisa, em um só lugar</h2>
+        <p class="p">Checklist práticos, planos de ação e linguagem amiga — feitos para usar no dia a dia, mesmo sem rede de apoio. Nada de teorias enormes: é pegar e aplicar.</p>
+        <ul class="bullet">
+          <li>Rotas rápidas para resolver as dores mais comuns (pega, mastite, cólicas, regressões de sono).</li>
+          <li>Guias de segurança e primeiros socorros para agir com confiança.</li>
+          <li>Exemplos de cardápio e ideias de brincadeiras que estimulam o desenvolvimento.</li>
+          <li>Bônus: comunidade de mães para trocar experiências e acolhimento.</li>
+        </ul>
+        <p class="num" aria-live="polite">Preço promocional: <strong>R$ 49,90</strong></p>
+        <div class="cta">
+          <a class="btn primary" href="https://wa.me/5562999999999?text=Quero%20comprar%20o%20livro" target="_blank" rel="noopener">COMPRAR AGORA</a>
+          <a class="btn secondary" href="#grupo">Falar com outras mães</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container foot">
+      <div class="seal"><span class="shield" aria-hidden></span> Conexão segura via <strong>HTTPS</strong> • Pagamento e redirecionamentos pelo WhatsApp</div>
+      <nav class="menu">
+        <a href="#prova-social">PROVA SOCIAL</a>
+        <a href="#valor">VALOR</a>
+        <a href="#grupo">GRUPO WHATSAPP</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // Pequena melhoria: rolagem suave cross-browser para os links do menu
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+      })
+    })
+  </script>
+</body>
+</html>
